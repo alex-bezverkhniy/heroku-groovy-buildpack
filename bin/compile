@@ -19,7 +19,7 @@ function download_and_install_groovy {
 	echo -n "-----> Installing groovy 2.4.10..."
 	if [ ! -d "${CACHE_DIR}/groovy-2.4.10" ]; then
 		curl -L -O -s http://dl.bintray.com/groovy/maven/apache-groovy-binary-2.4.10.zip
-		jar xf groovy-binary-2.4.10.zip
+		jar xf apache-groovy-binary-2.4.10.zip
 		chmod -R +x groovy-2.4.10
 		mv groovy-2.4.10 ${CACHE_DIR}
 	fi
