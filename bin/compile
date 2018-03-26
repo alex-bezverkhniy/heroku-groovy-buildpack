@@ -16,16 +16,16 @@ function download_and_install_jdk {
 }
 
 function download_and_install_groovy {
-	echo -n "-----> Installing groovy 2.4.10..."
-	if [ ! -d "${CACHE_DIR}/groovy-2.4.10" ]; then
-		curl -L -O -s http://dl.bintray.com/groovy/maven/apache-groovy-binary-2.4.10.zip
-		jar xf apache-groovy-binary-2.4.10.zip
-		chmod -R +x groovy-2.4.10
-		mv groovy-2.4.10 ${CACHE_DIR}
+	echo -n "-----> Installing groovy 2.5.0-beta-3..."
+	if [ ! -d "${CACHE_DIR}/groovy-2.5.0-beta-3" ]; then
+		curl -L -O -s http://dl.bintray.com/groovy/maven/apache-groovy-binary-2.5.0-beta-3.zip
+		jar xf apache-groovy-binary-2.5.0-beta-3.zip
+		chmod -R +x groovy-2.5.0-beta-3
+		mv groovy-2.5.0-beta-3 ${CACHE_DIR}
 	fi
-	cp -R ${CACHE_DIR}/groovy-2.4.10 ${BUILD_DIR}/groovy-2.4.10
+	cp -R ${CACHE_DIR}/groovy-2.5.0-beta-3 ${BUILD_DIR}/groovy-2.5.0-beta-3
 	echo "java.runtime.version=1.8" > ${BUILD_DIR}/system.properties
-	echo "export PATH=/$HOME/groovy-2.4.10/bin:/app/.jdk/bin:$PATH" > ${BUILD_DIR}/.profile.d/groovy.sh
+	echo "export PATH=/$HOME/groovy-2.5.0-beta-3/bin:/app/.jdk/bin:$PATH" > ${BUILD_DIR}/.profile.d/groovy.sh
 	PATH=
 	export PATH
 	echo "done"
